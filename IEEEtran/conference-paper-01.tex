@@ -1,4 +1,3 @@
-
 %% bare_conf.tex
 %% V1.4b
 %% 2015/08/26
@@ -52,6 +51,9 @@
 
 
 \documentclass[conference]{IEEEtran}
+\usepackage{filecontents,lipsum}
+\usepackage[noadjust]{cite}
+\usepackage{url}
 % Some Computer Society conferences also require the compsoc mode option,
 % but others use the standard conference format.
 %
@@ -84,15 +86,15 @@
 % \ifCLASSINFOpdf conditional that works the same way.
 % When switching from latex to pdflatex and vice-versa, the compiler may
 % have to be run twice to clear warning/error messages.
-
-
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
 
 
 
 
 % *** CITATION PACKAGES ***
 %
-%\usepackage{cite}
+\usepackage{cite}
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of the IEEE. Loading the cite package will
@@ -116,7 +118,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -395,15 +397,14 @@ The abstract goes here.
 
 
 \section{Introduction}
-Author profiling has been of importance in the recent years. From a forensic standpoint for example, it could be used to determine potential suspects by getting linguistic profiles and identifying characteristics. From a business intelligence perspective, companies could target specific people through online advertising. By knowing the profile of the authors, companies would easily find what a specific group of people talk about online and device strategies to advertise to these people. They could also analyze product reviews and know what types of products are liked or disliked by certain people. 
+Author profiling has been of importance in the recent years. From a forensic standpoint for example, it could be used to determine potential suspects in forums and chat rooms by getting their linguistic profiles and identifying characteristics and matching it with profiles from known criminals. From a business intelligence perspective, companies could target specific people through online advertising. By knowing the profile of the authors, companies would easily find what a specific group of people talk about online and device strategies to advertise to these people. They could also analyze product reviews and know what types of products are liked or disliked by certain people. 
 
-The growth of the internet where text is one of the main forms of communication is one of the reasons for a rising interest in author profiling. Through this growth, various corpora could be extracted, curated, assembled from different sources such as blogs, websites, customer reviews, and even twitter posts. Of course, this presents some problems. For example, people from different countries who use the same online platform such as Twitter or Blogger could behave differently in terms of text usage. This presents a difficulty in profiling. This work tries to take this difficulty into account by studying which kind of features are useful for different languages. 
+The growth of the internet where text is one of the main forms of communication is one of the reasons for a rising interest in author profiling. Through this growth, various corpora could be extracted, curated, assembled from different sources such as blogs, websites, customer reviews, and even twitter posts. Of course, this presents some problems. For example, people from different countries who use the same online platform such as Twitter or Blogger could behave differently in terms of text usage. This presents a difficulty in profiling. Another diffuculty in profiling is that text to profiles could be known in one genre and not in the other. For example, it's possible that age and gender could be given in Twitter but not in Blogger. This work aims to explore this problem. 
 
-The aim of this work is to investigate the effect of syntactic information on author profiling in different languages. For this purpose, we used the dataset from PAN 2015~\cite{rangel:2015} since it has 4 different languages and profiled almost in the same way on age, gender, and 5 personality traits - agreeability, conscientiousness, extrovertedness, openness, and stability. The four languages are English, Dutch, Italian, and Spanish. There are three different sets of features that are investigated in this work. The first set is the bag of words features in the form of term frequency and term frequency inverse document frequency. The second set are word ngrams. And finally, we also study part of speech ngrams to see if information extracted from these features are useful for characterizing twitter users.
-
+This work investigates author profiling specifically on Twitter data. We first study the accuracy on age and gender classification which are trained and tested on Twitter data. The second part of the study tests models trained on Twitter data on other genres. We used word embeddings as features and evaluated on PAN 2015 and 2016~\cite{rangel:2016} datasets using the TIRA platform~\cite{stein:2012o,stein:2014j}.  
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
+% For figures, \caption should occur after the \.
 % Note that IEEEtran v1.7 and later has special internal code that
 % is designed to preserve the operation of \label within \caption
 % even when the captionsoff option is in effect. However, because
@@ -498,15 +499,21 @@ The aim of this work is to investigate the effect of syntactic information on au
 \section{Related Literature}
 In previous author profiling research, most of the work is centered on hand crafted features as well as that which are content-based and style-based. For instance, in the work of Argamon et al. in~\cite{argamon2009automatically} where texts were categorized based on gender, age, native language, and personality, different content-based features and style-based features were used. In another example of Schler et al. in~\cite{schler2006effects} where writing styles in blogs are related to age and gender. Stylistic and content features were extracted from 71,000 different blogs and a Multi-Class Real Winnow was used to learn the models to classify the blogs. Stylistic features included parts-of-speech tags, function words, hyperlinks, and non-dictionary words. Content features included word unigrams with high information gain. %The accuracy achieved was around 80\% for gender classification and 75\% for age identification.
 
-This can also be seen in the previous PAN editions. In the first edition of PAN~\cite{rangel2013overview} in 2013, the task  was age and gender profiling for English and Spanish blogs. There were a variety of methods used. One set includes content-based features such as bag of words, named entities, dictionary words, slang words, contractions, sentiment words, and emotion words. Another would be stylistic features such as frequencies, punctuations, POS, HTML use, readability measures, and other various statistics. There are also features that are n-grams based, IR-based, and collocations-based. Named entities, sentiment words, emotion words, and slang, contractions and words with character flooding were also considered. The work of Lopez-Monroy in~\cite{lopez2013inaoe} was considered the winner for the task although they placed second for both English and Spanish where they used second order representation based on relationships between documents and profiles. The work of Meina et al.~\cite{meina2013ensemble} used collocations and placed first for English while the work of Santosh et al. in~\cite{santosh2013author} worked well with Spanish using POS features.
+This can also be seen in the previous PAN editions. In the first edition of PAN~\cite{rangel2013overview} in 2013, the task  was age and gender profiling for English and Spanish blogs. There were a variety of methods used. One set includes content-based features such as bag of words, named entities, dictionary words, slang words, contractions, sentiment words, and emotion words. Another would be stylistic features such as frequencies, punctuations, POS, HTML use, readability measures, and other various statistics. There are also features that are n-grams based, IR-based, and collocations-based. Named entities, sentiment words, emotion words, and slang, contractions and words with character flooding were also considered. The work of Lopez-Monroy in~\cite{lopez2013inaoe} was considered the winner for the task although they placed second for both English and Spanish where they used second order representation based on relationships between documents and profiles. The work of Meina et al.~cite{meina2013ensemble} used collocations and placed first for English while the work of Santosh et al. in~\cite{santosh2013author} worked well with Spanish using POS features.
 
 In PAN 2014~\cite{rangel2014overview}, the task was profiling authors with text from four different sources - social media, twitter, blogs, and hotel reviews. Most of the approaches used in this edition are similar to the previous year. In~\cite{lopezusing}, the method used to represent terms in a space of profiles and then represent the documents in the space of profiles and subprofiles were built using expectation maximization clustering. This is the same method as in 2013 in~\cite{lopez2013inaoe}. In~\cite{maharjansimple}, n-grams were used with stopwords, punctuations, and emoticons retained, and then idf count was also used before placed into a classifier. Liblinear logistic regression returned with the best result. In~\cite{weren6exploring}, different features were used that were related to length (number of characters, words, sentences), information retrieval (cosine similarity, okapi BM25), and readability (Flesch-Kincaid readability, correctness, style). Another approach is to use term vector model representation as in~\cite{villenadaedalus}. For the work of Marquardt et al. in~\cite{marquardt2014age}, they used a combination of content-based features (MRC, LIWC, sentiments) and stylistic features (readability, html tags, spelling and grammatical error, emoticons, total number of posts, number of capitalized letters number of capitalized words). Classifiers also varied for this edition. There was the use of logistic regression, multinomial Naïve Bayes, liblinear, random forests, Support Vector Machines, and decision tables. The method of Lopez-Monroy in~\cite{lopezusing} gave the best result with an average accuracy of 28.95\% on all corpus-types and languages.
 
 In PAN 2015~\cite{rangel2015overview}, the task was limited to tweets but expanded to different languages with age and gender classification and a personality dimension. The different languages include English, Spanish, Italian, and Dutch. There were 5 different personality dimensions - extroversion, stability, agreeableness, conscientiousness, and openness. And in this edition, the work of Alvarez-Carmona et al.~\cite{alvarezinaoe} gave the best results on English, Spanish, and Dutch. Their work used second order profiles as in the previous years as well as LSA. On the other hand, the work of Gonzales-Gallardo et al.~\cite{gonzaleztweets} gave the better result for Italian. This used stylistic features represented by character n-grams and POS n-grams.
 
-Since the current task is to train on one type of corpus and test on another type of corpus, we decided to try an approach that uses word embeddings. We used word2vec in particular as described in~\cite{mikolov2013efficient}~\cite{mikolov2013distributed}. Such embeddings were trained not on the corpus given by PAN but by Wikipedia dumps so there is a possibility that using such embeddings which work on one corpus type could work on another corpus type. Our approach also uses these embeddings in conjunction with Support Vector Machines.
+Since the problem is to train on one type of corpus and test on another type of corpus, we decided to try an approach that uses word embeddings. We used word2vec in particular as described in~\cite{mikolov2013efficient}~\cite{mikolov2013distributed}. Such embeddings were trained not on the corpus given by PAN but by Wikipedia dumps so there is a possibility that using such embeddings which work on one corpus type could work on another corpus type. Our approach also uses these embeddings in conjunction with Support Vector Machines.
 \section{Methodology}
-The methodology is illustrated by the figure~\ref{System}. It mainly consists of three parts - word embedding creation, training, and evaluation. These will be further discussed in the subsequent subsections.
+The task involves two parts. First we want to test the author profiling accuracy of models trained on twitter data against texts from the same genre. The second part is to see if profiling performs well on other genres. This means testing the models trained on twitter against texts on another genre. This is performed on PAN datasets for 2015 and 2016. The interesting thing for PAN is that 
+
+\subsection{Datasets}
+\subsubsection{PAN 2015 Dataset}
+\subsubsection{PAN 2016 Dataset}
+
+
 
 
 
@@ -518,25 +525,29 @@ For our problem, we used wikipedia dumps as an input to the word2vec implementat
 
 \begin{figure}
 \centering
-\caption{Diagram for word2vec implementations}
-\label{SkipCBOW}
-\includegraphics[scale=1]{sentiment_01_large.png}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\caption{Overview of word2vec flow.}
-\label{W2vFlow}
-\includegraphics[scale=.5]{Word2Vec.png}
-\end{figure}
-
-\begin{figure}
-\centering
+\includegraphics[width=2.5in]{System.png}
 \caption{Overview of the system}
 \label{System}
-\includegraphics[scale=.5]{System.png}
 \end{figure}
+
+\begin{figure}
+\centering
+
+\includegraphics[width=2.5in]{sentiment_01_large.png}
+\caption{Diagram for word2vec implementations}
+\label{SkipCBOW}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=2.5in]{Word2Vec.png}
+\caption{Overview of word2vec flow.}
+\label{W2vFlow}
+
+\end{figure}
+
+
 \subsection{Training and Evaluation}
 After obtaining word2vec representations for each word as illustrated in figure~\ref{W2vFlow}, each xml document of one twitter user is converted into word2vec representations. To do this, the texts were first extracted from the file. Then it was converted to lower case. After the conversion, the words are checked against the dictionary of all the words that have word2vec representations. If the words exists in the dictionary, the vector representation is pulled out and accumulated, and later normalized by the number of words that could be found in the dictionary. If the word does not exist in the dictionary, a zero vector is returned. 
 
@@ -552,15 +563,15 @@ The tables~\ref{EnglishAge}-~\ref{DutchAge} give the all the results for English
 \label{EnglishAge}
 \setlength{\tabcolsep}{0.5em}
 {\renewcommand{\arraystretch}{1.2}%
-\begin{tabular}{c|ccccccc}
+\begin{tabular}{cccccccc}
 \toprule
      & \multicolumn{3}{c}{poly}   &  & \multicolumn{3}{c}{rbf}        \\
      & \multicolumn{3}{c}{degree} &  & \multicolumn{3}{c}{gamma}      \\
-C    & 1       & 2       & 3      &  & 0.01  & 1     & 100            \\
+    & 1       & 2       & 3      &  & 0.01  & 1     & 100            \\
 \midrule
-0.01 & 0.418   & 0.416   & 0.416  &  & 0.414 & 0.414 & 0.414          \\
-1    & 0.418   & 0.416   & 0.416  &  & 0.414 & 0.418 & \textbf{0.448} \\
-100  & 0.418   & 0.423   & 0.393  &  & 0.416 & 0.409 & 0.426         \\
+C=0.01 & 0.418   & 0.416   & 0.416  &  & 0.414 & 0.414 & 0.414          \\
+C=1    & 0.418   & 0.416   & 0.416  &  & 0.414 & 0.418 & \textbf{0.448} \\
+C=100  & 0.418   & 0.423   & 0.393  &  & 0.416 & 0.409 & 0.426         \\
 \bottomrule 
 \end{tabular}
 }
@@ -572,15 +583,15 @@ C    & 1       & 2       & 3      &  & 0.01  & 1     & 100            \\
 \label{EnglishGender}
 \setlength{\tabcolsep}{0.5em}
 {\renewcommand{\arraystretch}{1.2}%
-\begin{tabular}{c|ccccccc}
+\begin{tabular}{cccccccc}
 \toprule
      & \multicolumn{3}{c}{poly}       &  & \multicolumn{3}{c}{rbf}   \\
      & \multicolumn{3}{c}{degree}     &  & \multicolumn{3}{c}{gamma} \\
-C    & 1     & 2     & 3              &  & 0.01    & 1       & 100   \\
+    & 1     & 2     & 3              &  & 0.01    & 1       & 100   \\
 \midrule
-0.01 & 0.534 & 0.495 & 0.495          &  & 0.498   & 0.500   & 0.512 \\
-1    & 0.534 & 0.561 & 0.579          &  & 0.498   & 0.563   & 0.643 \\
-100  & 0.534 & 0.677 & \textbf{0.682} &  & 0.548   & 0.672   & 0.643 \\
+C=0.01 & 0.534 & 0.495 & 0.495          &  & 0.498   & 0.500   & 0.512 \\
+C=1    & 0.534 & 0.561 & 0.579          &  & 0.498   & 0.563   & 0.643 \\
+C=100  & 0.534 & 0.677 & \textbf{0.682} &  & 0.548   & 0.672   & 0.643 \\
 \bottomrule
 \end{tabular}
 }
@@ -593,15 +604,15 @@ The results for Spanish tweets are given below. In table~\ref{SpanishAge}, the h
 \label{SpanishAge}
 \setlength{\tabcolsep}{0.5em}
 {\renewcommand{\arraystretch}{1.2}%
-\begin{tabular}{c|ccccccc}
+\begin{tabular}{cccccccc}
 \toprule
      & \multicolumn{3}{c}{poly}   &  & \multicolumn{3}{c}{rbf}        \\
      & \multicolumn{3}{c}{degree} &  & \multicolumn{3}{c}{gamma}      \\
-C    & 1       & 2       & 3      &  & 0.01  & 1              & 100   \\
+    & 1       & 2       & 3      &  & 0.01  & 1              & 100   \\
 \midrule
-0.01 & 0.506   & 0.506   & 0.506  &  & 0.506 & 0.506          & 0.506 \\
-1    & 0.506   & 0.511   & 0.511  &  & 0.506 & 0.506          & 0.496 \\
-100  & 0.506   & 0.513   & 0.415  &  & 0.506 & \textbf{0.513} & 0.422 \\
+C=0.01 & 0.506   & 0.506   & 0.506  &  & 0.506 & 0.506          & 0.506 \\
+C=1    & 0.506   & 0.511   & 0.511  &  & 0.506 & 0.506          & 0.496 \\
+C=100  & 0.506   & 0.513   & 0.415  &  & 0.506 & \textbf{0.513} & 0.422 \\
 \bottomrule
 \end{tabular}
 }
@@ -613,15 +624,15 @@ C    & 1       & 2       & 3      &  & 0.01  & 1              & 100   \\
 \label{SpanishGender}
 \setlength{\tabcolsep}{0.5em}
 {\renewcommand{\arraystretch}{1.2}%
-\begin{tabular}{c|ccccccc}
+\begin{tabular}{cccccccc}
 \toprule
      & \multicolumn{3}{c}{poly}   &  & \multicolumn{3}{c}{rbf}        \\
      & \multicolumn{3}{c}{degree} &  & \multicolumn{3}{c}{gamma}      \\
-C    & 1       & 2       & 3      &  & 0.01  & 1              & 100   \\
+    & 1       & 2       & 3      &  & 0.01  & 1              & 100   \\
 \midrule
-0.01 & 0.504   & 0.504   & 0.504  &  & 0.504 & 0.557          & 0.565 \\
-1    & 0.504   & 0.546   & 0.577  &  & 0.504 & 0.573          & 0.638 \\
-100  & 0.504   & 0.663   & 0.654  &  & 0.568 & \textbf{0.671} & 0.621 \\
+C=0.01 & 0.504   & 0.504   & 0.504  &  & 0.504 & 0.557          & 0.565 \\
+C=1    & 0.504   & 0.546   & 0.577  &  & 0.504 & 0.573          & 0.638 \\
+C=100  & 0.504   & 0.663   & 0.654  &  & 0.568 & \textbf{0.671} & 0.621 \\
 \bottomrule
 \end{tabular}
 }
@@ -634,15 +645,15 @@ Dutch gave the highest accuracy of 71.9\% using an SVM with a radial basis funct
 \label{DutchAge}
 \setlength{\tabcolsep}{0.5em}
 {\renewcommand{\arraystretch}{1.2}%
-\begin{tabular}{c|ccccccc}
+\begin{tabular}{cccccccc}
 \toprule
      & \multicolumn{3}{c}{poly}   &  & \multicolumn{3}{c}{rbf}   \\
      & \multicolumn{3}{c}{degree} &  & \multicolumn{3}{c}{gamma} \\
-C    & 1       & 2       & 3      &  & 0.01    & 1       & 100   \\
+    & 1       & 2       & 3      &  & 0.01    & 1       & 100   \\
 \midrule
-0.01 & 0.547   & 0.513   & 0.513  &  & 0.516   & 0.589   & 0.654 \\
-1    & 0.542   & 0.641   & 0.649  &  & 0.516   & 0.644   & 0.717 \\
-100  & 0.539   & 0.719   & 0.685  &  & 0.646   & \textbf{0.719}   & 0.658 \\
+C=0.01 & 0.547   & 0.513   & 0.513  &  & 0.516   & 0.589   & 0.654 \\
+C=1    & 0.542   & 0.641   & 0.649  &  & 0.516   & 0.644   & 0.717 \\
+C=100  & 0.539   & 0.719   & 0.685  &  & 0.646   & \textbf{0.719}   & 0.658 \\
 \bottomrule
 \end{tabular}
 }
@@ -715,8 +726,9 @@ The authors would like to thank Erasmus Mundus Mobility for Asia.
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\bibliographystyle{IEEEtran}
-\bibliography{citations}
+%\bibliographystyle{IEEEtran}
+\bibliography{citations}{}
+\bibliographystyle{plain}
 %\begin{thebibliography}{1}
 %
 %\bibitem{IEEEhowto:kopka}

@@ -1,0 +1,133 @@
+\begin{thebibliography}{10}
+
+\bibitem{TrainWord2Vec}
+Training word2vec model on english wikipedia by gensim.
+\newblock
+  \url{http://textminingonline.com/training-word2vec-model-on-english-wikipedia-by-gensim}.
+\newblock Accessed: 2010-05-23.
+
+\bibitem{alvarezinaoe}
+Miguel~A {\'A}lvarez-Carmona, A~Pastor L{\'o}pez-Monroy, Manuel Montes-y
+  G{\'o}mez, Luis Villase{\~n}or-Pineda, and Hugo Jair-Escalante.
+\newblock Inaoe’s participation at pan’15: Author profiling task.
+
+\bibitem{argamon2009automatically}
+Shlomo Argamon, Moshe Koppel, James~W Pennebaker, and Jonathan Schler.
+\newblock Automatically profiling the author of an anonymous text.
+\newblock {\em Communications of the ACM}, 52(2):119--123, 2009.
+
+\bibitem{stein:2012o}
+Tim Gollub, Benno Stein, Steven Burrows, and Dennis Hoppe.
+\newblock {TIRA: Configuring, Executing, and Disseminating Information
+  Retrieval Experiments}.
+\newblock In {A Min} Tjoa, Stephen Liddle, Klaus-Dieter Schewe, and Xiaofang
+  Zhou, editors, {\em 9th International Workshop on Text-based Information
+  Retrieval (TIR 12) at DEXA}, pages 151--155, Los Alamitos, California,
+  September 2012. IEEE.
+
+\bibitem{gonzaleztweets}
+Carlos~E Gonz{\'a}lez-Gallardo, Azucena Montes, Gerardo Sierra, J~Antonio
+  N{\'u}{\~n}ez-Ju{\'a}rez, Adolfo~Jonathan Salinas-L{\'o}pez, and Juan Ek.
+\newblock Tweets classification using corpus dependent tags, character and pos
+  n-grams.
+
+\bibitem{lopezusing}
+A~Pastor L{\'o}pez-Monroy, Manuel Montes-y G{\'o}mez, Hugo~Jair Escalante, and
+  Luis Villase{\~n}or-Pineda.
+\newblock Using intra-profile information for author profiling.
+
+\bibitem{lopez2013inaoe}
+Adrian~Pastor Lopez-Monroy, Manuel Montes-y Gomez, Hugo~Jair Escalante, Luis
+  Villasenor-Pineda, and Esa{\'u} Villatoro-Tello.
+\newblock Inaoe’s participation at pan’13: Author profiling task.
+\newblock In {\em CLEF 2013 Evaluation Labs and Workshop}, 2013.
+
+\bibitem{maharjansimple}
+Suraj Maharjan, Prasha Shrestha, and Thamar Solorio.
+\newblock A simple approach to author profiling in mapreduce.
+
+\bibitem{marquardt2014age}
+James Marquardt, Golnoosh Farnadi, Gayathri Vasudevan, Marie-Francine Moens,
+  Sergio Davalos, Ankur Teredesai, and Martine De~Cock.
+\newblock Age and gender identification in social media.
+\newblock {\em Proceedings of CLEF 2014 Evaluation Labs}, 2014.
+
+\bibitem{mikolov2013efficient}
+Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock {\em arXiv preprint arXiv:1301.3781}, 2013.
+
+\bibitem{mikolov2013distributed}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg~S Corrado, and Jeff Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3111--3119, 2013.
+
+\bibitem{stein:2014j}
+Martin Potthast, Tim Gollub, Francisco Rangel, Paolo Rosso, Efstathios
+  Stamatatos, and Benno Stein.
+\newblock {Improving the Reproducibility of PAN's Shared Tasks: Plagiarism
+  Detection, Author Identification, and Author Profiling}.
+\newblock In Evangelos Kanoulas, Mihai Lupu, Paul Clough, Mark Sanderson, Mark
+  Hall, Allan Hanbury, and Elaine Toms, editors, {\em Information Access
+  Evaluation meets Multilinguality, Multimodality, and Visualization. 5th
+  International Conference of the CLEF Initiative (CLEF 14)}, pages 268--299,
+  Berlin Heidelberg New York, September 2014. Springer.
+
+\bibitem{rangel2015overview}
+Francisco Rangel, P~Rosso, M~Potthast, B~Stein, and W~Daelemans.
+\newblock Overview of the 3rd author profiling task at pan 2015.
+\newblock In {\em CLEF}, 2015.
+
+\bibitem{rangel2014overview}
+Francisco Rangel, Paolo Rosso, Irina Chugur, Martin Potthast, Martin Trenkmann,
+  Benno Stein, Ben Verhoeven, and Walter Daelemans.
+\newblock Overview of the 2nd author profiling task at pan 2014.
+\newblock In {\em Proceedings of the Conference and Labs of the Evaluation
+  Forum (Working Notes)}, 2014.
+
+\bibitem{rangel2013overview}
+Francisco Rangel, Paolo Rosso, Moshe Moshe~Koppel, Efstathios Stamatatos, and
+  Giacomo Inches.
+\newblock Overview of the author profiling task at pan 2013.
+\newblock In {\em CLEF Conference on Multilingual and Multimodal Information
+  Access Evaluation}, pages 352--365. CELCT, 2013.
+
+\bibitem{rangel:2016}
+Francisco Rangel, Paolo Rosso, Ben Verhoeven, Walter Daelemans, Martin
+  Potthast, and Benno Stein.
+\newblock {Overview of the 4th Author Profiling Task at PAN 2016: Cross-genre
+  Evaluations}.
+\newblock In {\em Working Notes Papers of the CLEF 2016 Evaluation Labs}, CEUR
+  Workshop Proceedings. CLEF and CEUR-WS.org, September 2016.
+
+\bibitem{rehurek_lrec}
+Radim {\v R}eh{\r u}{\v r}ek and Petr Sojka.
+\newblock {Software Framework for Topic Modelling with Large Corpora}.
+\newblock In {\em {Proceedings of the LREC 2010 Workshop on New Challenges for
+  NLP Frameworks}}, pages 45--50, Valletta, Malta, May 2010. ELRA.
+\newblock \url{http://is.muni.cz/publication/884893/en}.
+
+\bibitem{santosh2013author}
+K~Santosh, Romil Bansal, Mihir Shekhar, and Vasudeva Varma.
+\newblock Author profiling: Predicting age and gender from blogs.
+\newblock {\em Notebook Papers of CLEF}, 2013.
+
+\bibitem{schler2006effects}
+Jonathan Schler, Moshe Koppel, Shlomo Argamon, and James~W Pennebaker.
+\newblock Effects of age and gender on blogging.
+\newblock In {\em AAAI Spring Symposium: Computational Approaches to Analyzing
+  Weblogs}, volume~6, pages 199--205, 2006.
+
+\bibitem{villenadaedalus}
+Julio Villena-Rom{\'a}n and Jos{\'e}~Carlos Gonz{\'a}lez-Crist{\'o}bal.
+\newblock Daedalus at pan 2014: Guessing tweet author's gender and age.
+
+\bibitem{weren6exploring}
+Edson~RD Weren, Viviane~P Moreira, and Jos{\'e}~PM de~Oliveira.
+\newblock Exploring information retrieval features for author
+  profiling—notebook for pan at clef 2014.
+\newblock {\em Cappellato et al.[6]}.
+
+\end{thebibliography}
