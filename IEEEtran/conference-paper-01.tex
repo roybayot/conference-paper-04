@@ -507,7 +507,7 @@ In PAN 2015~\cite{rangel2015overview}, the task was limited to tweets but expand
 
 Since the problem is to train on one type of corpus and test on another type of corpus, we decided to try an approach that uses word embeddings. We used word2vec in particular as described in~\cite{mikolov2013efficient}~\cite{mikolov2013distributed}. Such embeddings were trained not on the corpus given by PAN but by Wikipedia dumps so there is a possibility that using such embeddings which work on one corpus type could work on another corpus type. Our approach also uses these embeddings in conjunction with Support Vector Machines.
 \section{Methodology}
-The task involves two parts. First we want to test the author profiling accuracy of models trained on twitter data against texts from the same genre. The second part is to see if profiling performs well on other genres. This means testing the models trained on twitter against texts on another genre. This is performed on PAN datasets for 2015 and 2016. The interesting thing for PAN is that 
+The task involves two parts. First we want to test the author profiling accuracy of models trained on twitter data against texts from the same genre. The second part is to see if profiling performs well on other genres. This means testing the models trained on twitter against texts on another genre. This is performed on PAN datasets for 2015 and 2016. The interesting thing for PAN is that training data is given to participants but the test data is withheld. This provides for a more stringe
 
 \subsection{Datasets}
 \subsubsection{PAN 2015 Dataset}
